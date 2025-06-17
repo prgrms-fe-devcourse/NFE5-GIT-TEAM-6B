@@ -9,7 +9,6 @@ const cardHTML = `
   </div>
 `;
 
-// 좋아요 클릭 이벤트
 function handleLikeClick() {
   let heart = false;
 
@@ -18,7 +17,11 @@ function handleLikeClick() {
     const emptySrc = './assets/images/heart.svg';
     const fillSrc = './assets/images/fillheart.svg';
 
-    target.src = heart ? emptySrc : fillSrc;
+    if (!heart) {
+      target.src = fillSrc;
+    } else {
+      target.src = emptySrc;
+    }
     heart = !heart;
   };
 }
@@ -31,7 +34,6 @@ function LikeEvents() {
   });
 }
 
-// 상세 보기 버튼
 function DetailEvents() {
   const detailButtons = document.querySelectorAll('.view_detail_btn');
 
@@ -40,12 +42,10 @@ function DetailEvents() {
   });
 }
 
-// 상세 보기 버튼 클릭 시 동작
 function handleDetailButtonClick() {
   alert('상세 보기 눌림');
 }
 
-// 더보기 버튼 클릭 시 카드 추가 및 이벤트 등록
 function handleMoreButtonClick() {
   for (let i = 0; i < 3; i++) {
     cardWrap.insertAdjacentHTML('beforeend', cardHTML);
@@ -54,7 +54,6 @@ function handleMoreButtonClick() {
   DetailEvents();
   moreBtn.style.display = 'none';
 }
-
 
 LikeEvents();
 DetailEvents();
