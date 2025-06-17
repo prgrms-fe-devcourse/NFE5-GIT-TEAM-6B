@@ -1,44 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>헬스는 처음이라</title>
-		<link rel="stylesheet" href="./css/reset.css" />
-		<link rel="stylesheet" href="./css/common.css" />
-		<link rel="stylesheet" href="./css/style.css" />
-		<script type="modules" src="./js/index.js"></script>
-	</head>
-	<body>
-		<div class="page_wrap">
-			<!-- 헤더 영역 -->
-			<header>
-				
-			</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헬스는 처음이라</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/e8c69351e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/index.js"></script>
+  </head>
+  <body>
+    <div class="page_wrap">
+      <!-- 헤더 영역 -->
+      <header></header>
 
-			<!-- visual 영역 -->
-			<section>
-				
-			</section>
+      <!-- visual 영역 -->
+      <section></section>
 
-			<!--검색 영역 -->
-			<section>
-				<!-- 검색 창 -->
-				<div>
+      <!--검색 영역 -->
+      <section class="search_section">
+        <!-- 검색 창 -->
+        <div class="search_name">
+          <div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="search_input"
+              placeholder="운동 이름을 검색해보세요"
+            />
+          </div>
+        </div>
+        <div class="search_result">
+          <div class="search_result_title">검색 결과</div>
+          <div class="card_container">
+            <!-- JS로 이미지 동적으로 -->
+            <div class="exercise_card">
+              <img
+                src="https://i.namu.wiki/i/Yf7H6QDWvZKmSLLEuBA77PXfYvJH7362OjDeL7ni8_GaFN-O-VTZFdbJtw20kpnQM7HGx2IVcUS2xbvCd16RUg.webp"
+                alt="데드리프트"
+              />
+              <div class="card_text_top">
+                <div>데드리프트</div>
+                <div><i class="fa-regular fa-heart"></i></div>
+              </div>
+              <div class="card_text_bottom">상세보기</div>
+            </div>
+          </div>
 
-				</div>
+          <button type="button" class="more" id="load_more_btn">
+            더보기 <i class="fa-regular fa-plus"></i>
+          </button>
+        </div>
 
-				<!-- 탭 컨텐츠 -->
-				<div>
+        <!-- 탭 컨텐츠 -->
+        <div></div>
+      </section>
 
-				</div>
-			</section>
-
-			<!-- 푸터 영역 -->
-			<footer>
-				
-			</footer>
-		</div>
-
-	</body>
+      <!-- 푸터 영역 -->
+      <footer></footer>
+    </div>
+  </body>
 </html>
