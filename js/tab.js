@@ -26,14 +26,15 @@ function handleTabMenu(e) {
 }
 
 /* 탭 컨텐츠 데이터 출력 */
-function renderTabCont(category) {
+function renderTabCont(category, i) {
   const filtered = data.filter((item) => item.category === category);
   let names = filtered.map((item) => item.name);
 
-  // console.log(names);
+  console.log(names);
 
-  // 임시 보여주기위한
+  // // 임시 보여주기위한
   // names = names.join(', ');
+  // // 임시
   // tabContList[i].textContent = names;
 }
 
@@ -44,8 +45,8 @@ function renderTabCont(category) {
 document.addEventListener('DOMContentLoaded', () => {
   const categories = ['등', '팔', '가슴', '하체', '유산소'];
 
-  categories.forEach((category) => {
-    renderTabCont(category);
+  categories.forEach((category, i) => {
+    renderTabCont(category, i);
   });
 });
 
