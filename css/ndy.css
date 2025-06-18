@@ -7,26 +7,23 @@
   margin: 0 auto;
 
   @media (max-width: 968px) {
-  
     justify-content: center; 
-  
+  }
 }
-  
 
-}
 .card_contents{
+  display:block;
   position: relative;
-  width: calc(100% / 3 - 40px);
+  width: calc(100% / 3 - 42px);
   min-width: 280px;
   max-width: 373px;
   height: 390px;
   border-radius: 10px;
-  @media (max-width: 600px) {
-  
-    width:100%
-  
-}
 
+  @media (max-width: 600px) {
+    min-width: auto;
+    width: 100%;
+  }
 }
 .card_contents img:first-child{
   width: 100%;
