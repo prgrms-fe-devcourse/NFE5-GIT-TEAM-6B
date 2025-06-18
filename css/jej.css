@@ -1,3 +1,9 @@
+/* body click event 테스트용 */
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
 .popup_card_container {
 	width: 1200px;
 	height: 800px;
@@ -91,8 +97,14 @@
 	margin-bottom: 4px;
 }
 
+.popup_exercise_detail ol {
+	list-style-type: decimal;
+	padding-left: 1.5em;
+	margin: 0;
+}
+
 .popup_exercise_detail li {
-	display: block;
+	display: list-item;
 	color: var(--c-dark);
 	font-family: "Noto Sans KR";
 	font-size: 16px;
