@@ -57,7 +57,7 @@
   padding-bottom: 80px;
 }
 
-.exercise_card {
+/* .exercise_card {
   width: 160px;
   position: relative;
   border-radius: 12px;
@@ -71,7 +71,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-}
+} */
 
 .card_text_top {
   position: absolute;
