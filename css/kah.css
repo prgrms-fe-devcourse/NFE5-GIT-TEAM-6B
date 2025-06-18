@@ -83,6 +83,10 @@
 .tab_cont_wrap {
   padding-top: 46px;
   max-width: 1200px;
+
+  @media (max-width: 1200px) {
+    padding: 46px 10px 0;
+  }
 }
 
 .tab_cont_wrap .tab_cont {
@@ -91,8 +95,5 @@
     display: block;
   }
 
-  @media (max-width: 1200px) {
-    padding: 0 10px;
-  }
+  
 }
-
