@@ -30,7 +30,7 @@ export const exercises = [
   {
     id: 2,
     name: "오버헤드 프레스",
-    category: "어깨",
+    category: "팔",
     thumbnail: "../assets/images/thumbnail2.png",
     video: "../assets/videos/video02.mp4",
     desc: "어깨 앞쪽 근육을 주로 쓰며 머리 위로 번쩍 들었을 때는 바벨과 몸이 일직선이 돼야 해요!",
@@ -115,7 +115,7 @@ export const exercises = [
 {
   "id": 5,
   "name": "싸이클",
-  "category": "하체",
+  "category": "유산소",
   "thumbnail": "../assets/images/thumbnail5.png",
   "video": "../assets/videos/video05.mp4",
   "desc": "대표적인 유산소 운동이에요. 숨이 지속적으로 차오를 수 있게 운동을 진행해 주세요!",
