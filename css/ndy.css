@@ -5,6 +5,12 @@
   justify-content: space-between;
   gap: 48px 40px;  
   margin: 0 auto;
+
+  @media (max-width: 968px) {
+  
+    justify-content: center; 
+  
+}
   
 
 }
@@ -15,8 +21,18 @@
   max-width: 373px;
   height: 390px;
   border-radius: 10px;
-  background-image:url('../assets/images/Barbell squat.png');
+  @media (max-width: 600px) {
   
+    width:100%
+  
+}
+
+}
+.card_contents img:first-child{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; 
 }
 
 .card_contents .ex_name{

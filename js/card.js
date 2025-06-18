@@ -2,11 +2,12 @@ const moreBtn = document.querySelector('.more_btn');
 const cardWrap = document.querySelector('.card_wrap');
 
 const cardHTML = `
-  <div class="card_contents">
-    <span class="ex_name">바벨 스쿼트</span>
+  <li class="card_contents">
+	  <img src="./assets/images/barbellSquat.png" alt="바벨스쿼트" />
+		<span class="ex_name">바벨 스쿼트</span>					
     <img class="like" src="./assets/images/heart.svg" alt="좋아요 버튼" />
-    <button class="view_detail_btn" type="button">상세 보기</button>
-  </div>
+	  <button class="view_detail_btn" type="button">상세 보기</button>
+	</li>
 `;
 
 function handleLikeClick() {
