@@ -26,11 +26,11 @@ function handleTabMenu(e) {
 }
 
 /* 탭 컨텐츠 데이터 출력 */
-function renderTabCont(category, i) {
+function renderTabCont(category) {
   const filtered = data.filter((item) => item.category === category);
   let names = filtered.map((item) => item.name);
 
-  console.log(names);
+  // console.log(names);
 
   // 임시 보여주기위한
   // names = names.join(', ');
@@ -44,8 +44,8 @@ function renderTabCont(category, i) {
 document.addEventListener('DOMContentLoaded', () => {
   const categories = ['등', '팔', '가슴', '하체', '유산소'];
 
-  categories.forEach((category, i) => {
-    renderTabCont(category, i);
+  categories.forEach((category) => {
+    renderTabCont(category);
   });
 });
 
