@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "live-server --host=localhost --port=5500 --no-browser",
-    "serve": "node server/index.js"
+    "serve": "node server/index.js",
+    "postinstall": "chmod -R 755 node_modules/.bin"
   },
   "repository": {
     "type": "git",
