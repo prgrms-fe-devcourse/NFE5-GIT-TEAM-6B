@@ -19,7 +19,7 @@ export function createCardItem(thumbnail, name) {
 }
 
 
-function handleLikeClick() {
+export function handleLikeClick() {
   let heart = false;
 
   return (e) => {
@@ -36,7 +36,7 @@ function handleLikeClick() {
   };
 }
 
-function LikeEvents() {
+export function LikeEvents() {
   const likes = document.querySelectorAll('.like');
 
   likes.forEach(el => {
@@ -44,7 +44,7 @@ function LikeEvents() {
   });
 }
 
-function DetailEvents() {
+export function DetailEvents() {
   const detailButtons = document.querySelectorAll('.view_detail_btn');
 
   detailButtons.forEach(btn => {

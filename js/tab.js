@@ -1,5 +1,5 @@
 import { exercises as data } from './data.js';
-import { createCardItem } from './card02.js';
+import { createCardItem, LikeEvents, DetailEvents } from './card02.js';
 
 let tabMenuList = document.querySelectorAll('.tab_menu > li');
 let tabContList = document.querySelectorAll('.tab_cont_wrap > div');
@@ -45,4 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tabMenuList.forEach((tab) => {
     tab.addEventListener('click', handleTabMenu);
   });
+  LikeEvents();
+  DetailEvents(); 
 });
