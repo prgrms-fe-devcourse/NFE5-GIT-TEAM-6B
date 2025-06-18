@@ -1,56 +1,48 @@
 import { exercises as data } from './data.js';
+import { createCardItem } from './card02.js';
 
 let tabMenuList = document.querySelectorAll('.tab_menu > li');
 let tabContList = document.querySelectorAll('.tab_cont_wrap > div');
 
-
-// NodeList → Array로 변환
+// NodeList → Array
 tabMenuList = [...tabMenuList];
 tabContList = [...tabContList];
 
-/* 탭 이동 */
+/* 탭 이동 이벤트 */
 function handleTabMenu(e) {
   e.preventDefault();
 
   const activeTab = e.currentTarget;
   const index = tabMenuList.indexOf(activeTab);
 
-  tabMenuList.forEach((tab) => {
-    tab.classList.remove('active');
-  });
+  tabMenuList.forEach((tab) => tab.classList.remove('active'));
+  tabContList.forEach((cont) => cont.classList.remove('active'));
+
   activeTab.classList.add('active');
-
-  tabContList.forEach((cont, i) => {
-    cont.classList.toggle('active', i === index);
-  });
+  tabContList[index].classList.add('active');
 }
 
-/* 탭 컨텐츠 데이터 출력 */
-function renderTabCont(category, i) {
-  const filtered = data.filter((item) => item.category === category);
-  let names = filtered.map((item) => item.name);
-
-  console.log(names);
-
-  // // 임시 보여주기위한
-  // names = names.join(', ');
-  // // 임시
-  // tabContList[i].textContent = names;
-}
-
-
-
-/* 이벤트 바인딩 */
-// 탭 카테고리 데이터 이벤트 (페이지가 다만들어지고 난후)
-document.addEventListener('DOMContentLoaded', () => {
+/* 탭 컨텐츠 전체 렌더링 */
+function renderAllTabContents() {
   const categories = ['등', '팔', '가슴', '하체', '유산소'];
 
-  categories.forEach((category, i) => {
-    renderTabCont(category, i);
-  });
-});
+  categories.forEach((category, index) => {
+    const filtered = data.filter(item => item.category === category);
+    const cardWrap = tabContList[index].querySelector('.card_wrap');
 
-// 탭 메뉴 클릭 이벤트
-tabMenuList.forEach((tab) => {
-  tab.addEventListener('click', handleTabMenu);
+    filtered.forEach(({ thumbnail, name }) => {
+      const li = createCardItem(thumbnail, name);
+      //insertAdjacentHTML() : html문자열 삽입 / beforeend: 맨뒤에 삽입
+      cardWrap.insertAdjacentHTML('beforeend', li);
+    });
+  });
+}
+
+/* 이벤트 바인딩 */
+document.addEventListener('DOMContentLoaded', () => {
+  renderAllTabContents(); // 페이지 로드 시 전부 렌더링
+
+  tabMenuList.forEach((tab) => {
+    tab.addEventListener('click', handleTabMenu);
+  });
 });

@@ -26,7 +26,7 @@ export const exercises = [
     id: 2,
     name: "팔1",
     category: "팔",
-    thumbnail: "assets/images/thumbnail1.png",   // 리스트용 썸네일
+    thumbnail: "assets/images/thumbnail2.png",   // 리스트용 썸네일
     video: "assets/videos/video1.mp4",       // 상세용 영상
     desc: "몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!",
     startPos: [
@@ -49,7 +49,7 @@ export const exercises = [
     id: 3,
     name: "팔2",
     category: "팔",
-    thumbnail: "assets/images/thumbnail1.png",   // 리스트용 썸네일
+    thumbnail: "assets/images/thumbnail2.png",   // 리스트용 썸네일
     video: "assets/videos/video1.mp4",       // 상세용 영상
     desc: "몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!",
     startPos: [
