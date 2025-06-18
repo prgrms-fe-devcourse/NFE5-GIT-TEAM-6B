@@ -33,9 +33,8 @@ function renderTabCont(category, i) {
   console.log(names);
 
   // 임시 보여주기위한
-  names = names.join(', ');
-  // 임시
-  tabContList[i].textContent = names;
+  // names = names.join(', ');
+  // tabContList[i].textContent = names;
 }
 
 
