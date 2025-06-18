@@ -17,10 +17,13 @@
   padding: 20px 0;
   z-index: 1000;
 }
-/* .search_box {
-} */
+.search_box {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
 
-.search_name i {
+/* .search_name i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -28,11 +31,34 @@
   font-size: 22px;
   color: var(--c-dark);
 }
+ */
+.search_box i {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--c-dark);
+  pointer-events: none;
+}
 
-#search_input {
+/* #search_input {
   width: 500px;
   margin: 0 auto;
   padding: 12px 16px 12px 60px;
+  font-size: 16px;
+  border: 1px solid var(--c-white);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px var(--c-dark);
+  outline: none;
+  box-sizing: border-box;
+} */
+
+#search_input {
+  width: 100%; /* 화면에 따라 유동적으로 */
+  max-width: 500px; /* 최대 너비 제한 */
+  margin: 0 auto;
+  padding: 12px 16px 12px 48px; /* 왼쪽 여백은 아이콘 대비 조정 */
   font-size: 16px;
   border: 1px solid var(--c-white);
   border-radius: 8px;
@@ -135,4 +161,16 @@
 i {
   font-size: 12px;
   margin-left: 5px;
+}
+
+@media (max-width: 500px) {
+  #search_input {
+    font-size: 14px;
+    padding: 10px 12px 10px 40px;
+  }
+
+  .search_box i {
+    font-size: 18px;
+    left: 12px;
+  }
 }
