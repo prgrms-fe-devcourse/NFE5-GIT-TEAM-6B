@@ -1,3 +1,5 @@
+import { renderExercisePopup } from "./popup.js"
+
 const moreBtn = document.querySelector('.more_btn');
 const cardWrap = document.querySelector('.card_wrap');
 
@@ -44,7 +46,7 @@ function DetailEvents() {
 }
 
 function handleDetailButtonClick() {
-  alert('상세 보기 눌림');
+  renderExercisePopup();
 }
 
 function handleMoreButtonClick() {

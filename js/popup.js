@@ -1,15 +1,16 @@
 import { exercises } from "./data.js";
 
 
+
 /* 메인 페이지 카드에 등록해야하는 이벤트리스너 */
 
 // card contents html 은 이런 식으로 data-index를 가져야 함
 {/* <div class="card_contents" data-index="3"></div> */}
 
 
-// import { renderExercisePopup } from "./popup.js"
 
 // document.body.addEventListener("click", (e) => {
+    
 // 	const detailBtn = e.target.closest(".view_detail_btn");
 // 	if (!detailBtn) return;
 
