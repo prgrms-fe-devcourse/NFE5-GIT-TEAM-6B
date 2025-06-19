@@ -5,9 +5,9 @@
 }
 
 .search_bar {
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
   /* margin: 0; */
 
@@ -126,10 +126,10 @@
 
 .btn_load_more {
   background-color: var(--c-blue);
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
   width: 191px;
   height: 44px;
   display: flex;

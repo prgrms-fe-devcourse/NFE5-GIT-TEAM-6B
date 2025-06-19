@@ -1,6 +1,7 @@
 import { exercises as data } from './data.js';
 import { renderCards} from './card.js';
 
+
 let tabMenuList = document.querySelectorAll('.tab_menu > li');
 let tabContList = document.querySelectorAll('.tab_cont_wrap > div');
 

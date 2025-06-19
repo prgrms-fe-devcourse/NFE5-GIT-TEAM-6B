@@ -1,18 +1,19 @@
 import { renderExercisePopup } from "./popup.js"
 
-const moreBtn = document.querySelector('.more_btn');
-const cardWrap = document.querySelector('.card_wrap');
+/* 카드 생성 함수 */
+export function createCardItem(thumbnail, name) {
+  return `
+    <li class="card_contents">
+      <img src="./${thumbnail}" alt="${name}" />
+      <span class="ex_name">${name}</span>					
+      <img class="like" src="./assets/images/heart.svg" alt="좋아요 버튼" />
+      <button class="view_detail_btn" type="button">상세 보기</button>
+    </li>
+  `;
+}
 
-const cardHTML = `
-  <li class="card_contents">
-	  <img src="./assets/images/barbellSquat.png" alt="바벨스쿼트" />
-		<span class="ex_name">바벨 스쿼트</span>					
-    <img class="like" src="./assets/images/heart.svg" alt="좋아요 버튼" />
-	  <button class="view_detail_btn" type="button">상세 보기</button>
-	</li>
-`;
-
-function handleLikeClick() {
+/* 좋아요 클릭 이벤트 핸들러 생성 */
+export function handleLikeClick() {
   let heart = false;
 
   return (e) => {
@@ -29,18 +30,20 @@ function handleLikeClick() {
   };
 }
 
-function LikeEvents() {
+/* 좋아요 이벤트 */
+export function LikeEvents() {
   const likes = document.querySelectorAll('.like');
-
   likes.forEach(el => {
+    el.removeEventListener('click', handleLikeClick);
     el.addEventListener('click', handleLikeClick());
   });
 }
 
-function DetailEvents() {
+/* 상세보기 이벤트 */
+export function DetailEvents() {
   const detailButtons = document.querySelectorAll('.view_detail_btn');
-
   detailButtons.forEach(btn => {
+    btn.removeEventListener('click', handleDetailButtonClick);
     btn.addEventListener('click', handleDetailButtonClick);
   });
 }
@@ -49,15 +52,16 @@ function handleDetailButtonClick() {
   renderExercisePopup();
 }
 
-function handleMoreButtonClick() {
-  for (let i = 0; i < 3; i++) {
-    cardWrap.insertAdjacentHTML('beforeend', cardHTML);
-  }
+/* 카드 여러 개 렌더링 + 이벤트 바인딩 */
+export function renderCards(container, items, startIndex, count) {
+  const slice = items.slice(startIndex, startIndex + count);
+  slice.forEach(({ thumbnail, name }) => {
+    const cardHTML = createCardItem(thumbnail, name);
+    container.insertAdjacentHTML('beforeend', cardHTML);
+  });
+
   LikeEvents();
   DetailEvents();
-  moreBtn.style.display = 'none';
-}
 
-LikeEvents();
-DetailEvents();
-moreBtn.addEventListener('click', handleMoreButtonClick);
+  return slice.length;
+}
