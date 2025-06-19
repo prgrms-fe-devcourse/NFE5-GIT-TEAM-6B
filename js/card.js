@@ -1,9 +1,9 @@
 import { renderExercisePopup } from "./popup.js"
 
 /* 카드 생성 함수 */
-export function createCardItem(thumbnail, name) {
+export function createCardItem(thumbnail, name, id) {
   return `
-    <li class="card_contents">
+    <li class="card_contents" data-index="${id}">
       <img src="./${thumbnail}" alt="${name}" />
       <span class="ex_name">${name}</span>					
       <img class="like" src="./assets/images/heart.svg" alt="좋아요 버튼" />
@@ -48,15 +48,27 @@ export function DetailEvents() {
   });
 }
 
-function handleDetailButtonClick() {
-  renderExercisePopup();
+function handleDetailButtonClick(e) {
+  const detailBtn = e.target.closest(".view_detail_btn");
+	if (!detailBtn) return;
+
+	const card = detailBtn.closest(".card_contents");
+	const index = Number(card?.dataset.index);
+
+  console.log('asdf');
+  
+  
+	if (!isNaN(index)) {
+		renderExercisePopup(index-1);
+	}
+  
 }
 
 /* 카드 여러 개 렌더링 + 이벤트 바인딩 */
 export function renderCards(container, items, startIndex, count) {
   const slice = items.slice(startIndex, startIndex + count);
-  slice.forEach(({ thumbnail, name }) => {
-    const cardHTML = createCardItem(thumbnail, name);
+  slice.forEach(({ thumbnail, name, id}) => {
+    const cardHTML = createCardItem(thumbnail, name, id);
     container.insertAdjacentHTML('beforeend', cardHTML);
   });
 
