@@ -58,7 +58,9 @@
   bottom: 25px;
 }
 .card_contents .view_detail_btn:hover{
-  background-color:rgb(196, 196, 196);
+  background-color: var(--c-blue);
+  color: #fff;
+  transition: 0.3s ease;
 }
 
 .more_btn_wrap {
@@ -77,4 +79,10 @@
   color:white;
   font-size: 16px;
   border-radius: 4px;
+  &:hover, &:active {
+    border: 3px solid var(--c-blue);
+    background-color: var(--c-alice);
+    color: var(--c-blue);
+    transition: 0.3s ease;
+  }
 }
