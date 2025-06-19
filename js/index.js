@@ -1,10 +1,10 @@
 import { exercises } from "../js/data.js";
 
-const searchInput = document.querySelector("#search_input");
+const searchInput = document.querySelector(".search_input_wrapper");
 const cardContainer = document.querySelector(".card_container");
 const autocompleteList = document.querySelector(".autocomplete_list");
 
-// 카드 생성 함수
+// (카드 생성 함수)
 function createExerciseCard(item) {
   const card = document.createElement("div");
   card.className = "exercise_card";
@@ -17,7 +17,7 @@ function createExerciseCard(item) {
 // 검색 결과 보여주는 함수
 function showSearchResult(keyword) {
   const matchedExercises = exercises.filter((item) =>
-    item.name.toLowerCase().includes(keyword.toLowerCase())
+    item.name.includes(keyword)
   );
 
   cardContainer.innerHTML = "";
@@ -32,8 +32,14 @@ function showSearchResult(keyword) {
   }
 }
 
+// 운동리스트에서 검색이 포함된 항목만 필터링
+function getMatchedExercises(keyword) {
+  return exercises.filter((item) => item.name.includes(keyword));
+}
+
+// handleSearchInput 함수
 function handleSearchInput() {
-  const inputValue = searchInput.value.trim().toLowerCase();
+  const inputValue = searchInput.value.trim();
   cardContainer.innerHTML = "";
   autocompleteList.innerHTML = "";
 
@@ -41,14 +47,12 @@ function handleSearchInput() {
     return;
   }
 
-  const matchedExercises = exercises.filter((item) => {
-    item.name.toLowerCase().includes(inputValue);
-  });
+  const matchedExercises = getMatchedExercises(inputValue);
 
   // 입력 추천 자동 검색어..?
   matchedExercises.forEach((item) => {
     const li = document.createElement("li");
-    li.textContent = item.name;
+    li.innerHTML = getHighlightedText(item.name, inputValue);
     li.addEventListener("click", () => {
       searchInput.value = item.name;
       autocompleteList.innerHTML = "";
@@ -58,6 +62,12 @@ function handleSearchInput() {
   });
 
   showSearchResult(inputValue);
+}
+
+// 입력값과 일치하는 부분에 하이라이트를 적용
+function getHighlightedText(text, keyword) {
+  const regex = new RegExp(`(${keyword})`);
+  return text.replace(regex, `<span class="highlight">$1</span>`);
 }
 
 searchInput.addEventListener("input", handleSearchInput);

@@ -24,31 +24,16 @@
       <!--검색 영역 -->
       <section class="search_section">
         <!-- 검색 창 -->
-        <!-- <div class="search_name">
-          <div class="search_box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              id="search_input"
-              placeholder="운동 이름을 검색해보세요"
-            />
-            <ul class="autocomplete_input">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-            </ul>
-          </div>
-        </div> -->
-        <div class="search_name">
+        <div class="search_bar">
           <div class="input_wrapper">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
-              id="search_input"
+              class="search_input_wrapper"
               placeholder="운동 이름을 검색해보세요"
             />
             <ul class="autocomplete_list"></ul>
+            <!-- <li></li> -->
           </div>
         </div>
 
@@ -58,7 +43,7 @@
           <!-- JS로 이미지 동적으로 -->
           <div class="card_container"></div>
 
-          <button type="button" class="more" id="load_more_btn">
+          <button type="button" class="btn_load_more" id="load_more_btn">
             더보기 <i class="fa-regular fa-plus"></i>
           </button>
         </div>
