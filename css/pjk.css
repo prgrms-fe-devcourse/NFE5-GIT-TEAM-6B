@@ -262,6 +262,10 @@ body {
   display: none;
 }
 
+.mobile_nav_menu {
+  display: none;
+}
+
 /* 모바일 */
 
 
@@ -340,7 +344,8 @@ body {
     height: auto;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 50px 0;
+
+    padding: 100px 0 50px 0;
   }
 
   .hero_text {
@@ -392,4 +397,37 @@ body {
     width: 150px;
     height: auto;
   }
+
+  
+  .mobile_nav_menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--c-dark);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 80px 20px;
+  }
+  
+  .mobile_nav_menu.active {
+    right: 0;
+  }
+  
+  .mobile_nav_menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .mobile_nav_menu a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
 }
+
