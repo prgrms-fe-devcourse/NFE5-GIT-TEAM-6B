@@ -1,5 +1,29 @@
 import { exercises } from "./data.js";
 
+
+/* 메인 페이지 카드에 등록해야하는 이벤트리스너 */
+
+// card contents html 은 이런 식으로 data-index를 가져야 함
+{/* <div class="card_contents" data-index="3"></div> */}
+
+
+// import { renderExercisePopup } from "./popup.js"
+
+// document.body.addEventListener("click", (e) => {
+// 	const detailBtn = e.target.closest(".view_detail_btn");
+// 	if (!detailBtn) return;
+
+// 	const card = detailBtn.closest(".card_contents");
+// 	const index = Number(card?.dataset.index);
+
+// 	if (!isNaN(index)) {
+// 		renderExercisePopup(index-1);
+// 	}
+// });
+
+
+
+
 /* data의 요소를 li로 변환 */
 function toListItems(arr, className) {
     const style = (arr.length === 1) ? 
