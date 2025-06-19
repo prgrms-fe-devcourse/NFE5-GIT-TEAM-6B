@@ -55,13 +55,13 @@ function handleDetailButtonClick(e) {
 	const card = detailBtn.closest(".card_contents");
 	const index = Number(card?.dataset.index);
 
-  console.log('asdf');
   
   
 	if (!isNaN(index)) {
 		renderExercisePopup(index-1);
+    console.log(renderExercisePopup(index-1));
+    console.log(index);
 	}
-  
 }
 
 /* 카드 여러 개 렌더링 + 이벤트 바인딩 */

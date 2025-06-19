@@ -1,19 +1,18 @@
 import { exercises } from "../js/data.js";
-
-
+import { renderCards } from "../js/card.js"
 const searchInput = document.querySelector(".search_input_wrapper");
-const cardContainer = document.querySelector(".card_container");
+const cardWrap = document.querySelector(".card_wrap");
 const autocompleteList = document.querySelector(".autocomplete_list");
 
 // (카드 생성 함수)
-function createExerciseCard(item) {
-  const card = document.createElement("div");
-  card.className = "exercise_card";
-  card.innerHTML = `
-  <img src="${item.thumbnail}" alt="${item.name}" />
-  `;
-  return card;
-}
+// function createExerciseCard(item) {
+//   const card = document.createElement("div");
+//   card.className = "exercise_card";
+//   card.innerHTML = `
+//   <img src="${item.thumbnail}" alt="${item.name}" />
+//   `;
+//   return card;
+// }
 
 // 검색 결과 보여주는 함수
 function showSearchResult(keyword) {
@@ -21,15 +20,13 @@ function showSearchResult(keyword) {
     item.name.includes(keyword)
   );
 
-  cardContainer.innerHTML = "";
+  cardWrap.innerHTML = "";
 
   if (matchedExercises.length > 0) {
-    matchedExercises.forEach((item) => {
-      const card = createExerciseCard(item);
-      cardContainer.appendChild(card);
-    });
+    // renderCards(container, items, startIndex, count)
+    renderCards(cardWrap, matchedExercises, 0, matchedExercises.length);
   } else {
-    cardContainer.innerHTML = `<p>해당 이름을 가진 운동을 찾을 수 없어요 😓</p>`;
+    cardWrap.innerHTML = `<li class="no_data">해당 이름을 가진 운동을 찾을 수 없어요 😓</li>`;
   }
 }
 
@@ -41,7 +38,7 @@ function getMatchedExercises(keyword) {
 // handleSearchInput 함수
 function handleSearchInput() {
   const inputValue = searchInput.value.trim();
-  cardContainer.innerHTML = "";
+  cardWrap.innerHTML = "";
   autocompleteList.innerHTML = "";
 
   if (!inputValue) {

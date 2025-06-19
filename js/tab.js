@@ -10,7 +10,7 @@ tabContList = [...tabContList];
 
 const categories = ['등', '팔', '가슴', '하체', '유산소'];
 const itemsPerLoad = 6;       // 처음 보여줄 카드 수
-const moreItemsPerClick = 3;  // 더보기 클릭 시 추가할 카드 수
+const moreItemsPerClick = 6;  // 더보기 클릭 시 추가할 카드 수
 
 // 각 카테고리별 현재 보여진 카드 수 저장
 const getShownCount = {};

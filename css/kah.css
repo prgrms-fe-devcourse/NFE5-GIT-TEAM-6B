@@ -94,6 +94,9 @@
   &.active {
     display: block;
   }
-
   
+}
+.card_wrap .no_data {
+  width: 100%;
+  text-align:center;
 }
