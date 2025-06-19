@@ -1,4 +1,6 @@
 import { exercises } from "../js/data.js";
+export * from '../js/card02.js'
+export * from '../js/tab.js'
 
 const searchInput = document.querySelector(".search_input_wrapper");
 const cardContainer = document.querySelector(".card_container");
