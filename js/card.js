@@ -59,8 +59,6 @@ function handleDetailButtonClick(e) {
   
 	if (!isNaN(index)) {
 		renderExercisePopup(index-1);
-    console.log(renderExercisePopup(index-1));
-    console.log(index);
 	}
 }
 
