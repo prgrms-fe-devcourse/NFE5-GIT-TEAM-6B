@@ -9,3 +9,7 @@
 
 ## 공백
 - 들여쓰기: 2칸 스페이스
+
+
+## github flow
+- 우리는 github flow 으로 관리하겠다

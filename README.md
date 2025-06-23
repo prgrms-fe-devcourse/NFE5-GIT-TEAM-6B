@@ -86,5 +86,9 @@ npm run dev
 ### GitHub 실습 - 충돌 연습
 
 진강박
-정은진
-테스트2
+
+
+텍스트 222
+
+
+https://github.com/prgrms-fe-devcourse/NFE5-GIT-TEAM-6B/blob/main/CONTRIBUTING.md
