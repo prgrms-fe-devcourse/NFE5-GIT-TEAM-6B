@@ -99,3 +99,4 @@ jin1  작업
 작업의 작업
 
 test: Squash and merge
+test2: Rebase and merge
