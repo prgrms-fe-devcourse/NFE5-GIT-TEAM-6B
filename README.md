@@ -91,4 +91,4 @@ npm run dev
 
 ### 코드 스타일 가이드
 
-파일 보기 [https://github.com/prgrms-fe-devcourse/NFE5-GIT-TEAM-6B/blob/main/CONTRIBUTING.md]
+👉🏻 [파일 보기](https://github.com/prgrms-fe-devcourse/NFE5-GIT-TEAM-6B/blob/main/CONTRIBUTING.md)
