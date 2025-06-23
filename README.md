@@ -98,3 +98,4 @@ jin1  작업
 또작업해
 작업의 작업
 
+test: Squash and merge
