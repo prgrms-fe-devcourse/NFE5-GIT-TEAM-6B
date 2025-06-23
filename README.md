@@ -84,3 +84,4 @@ npm run dev
 ---
 
 ### GitHub 실습 - 충돌 연습
+정은진
