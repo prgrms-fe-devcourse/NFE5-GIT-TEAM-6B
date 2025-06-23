@@ -95,3 +95,4 @@ npm run dev
 테스트 222
 jin1  작업
 작업의 작업
+test: Squash and merge
